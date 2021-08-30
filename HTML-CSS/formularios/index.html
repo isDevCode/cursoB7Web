@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios</title>
+</head>
+
+<style>
+*{
+    box-sizing: border-box;
+    
+
+}
+ body{
+    margin: 50px;
+    font-size: 17px;
+    position: relative;
+    background: rgb(160, 224, 203);
+    
+}
+ h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+form{
+   
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+   0;
+    
+}
+ label{
+    display: block;
+    margin-bottom: 10px;
+}
+input[type=text], textarea,select {
+    padding: 10px;
+    width: 500px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    outline: 0;
+    margin-top: 5px;
+}
+textarea{
+    height: 200px;
+    resize:none;
+}
+.termoslink{
+    color: #000;
+    text-decoration: none;
+}
+.termoslink:hover{
+    text-decoration: underline;
+}
+button{
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid#ccc;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 3px;
+}
+button:hover{
+    background: #ccc
+}
+
+</style>
+
+<body>
+    <h1>Formularios</h1>
+
+    <h2>Área de Cadastro</h2>
+    <form action="" method="get">
+        
+         <label>
+              Nome Completo: <br/>
+             <input type="text" name="nome">
+         </label>
+
+         <label>
+                 Descrição: <br/>
+              <textarea name="descricao"></textarea>
+        </label>
+
+
+        <label>
+            Categoria: <br/>
+            <select name="categoria" id="">
+                <option value="1">Categoria 1</option>
+                <option value="2">Categoria 2</option>
+                <option value="3">Categoria 3</option>
+                <option value="4">Categoria 4</option>
+                <option value="5">Categoria 5</option>
+                
+            </select>
+        </label>
+
+         <label>
+               <input type="checkbox" name="" id="">
+               Eu declaro que li e aceito os <a href="paginas/termos.html" class="termoslink" target="_blank"> termos de uso.</a>
+         </label>
+
+          <button>Fazer Cadastro</button>
+    </form>
+
+</body>
+</html>
