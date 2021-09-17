@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+:root {
+    --bg-color: #fff;
+    --bg-second: #ccc;
+    --font-size-big: 25px;
+    --font-size-small: 15px;
+}
+body {
+    background: var(--bg-color);
+    font-size: var(--font-size-big);
+}
+h1 {
+    color: var(--font-color, #0000ff);
+}
+.container {
+    background: var(--bg-second);
+    color: var(--font-color);
+}
+@media (max-width: 450px) {
+    body {
+        font-size: var(--font-size-small);
+    }
+}
+</style>
+<body>
+    <h1> Função media query</h1>
+</body>
+</html>

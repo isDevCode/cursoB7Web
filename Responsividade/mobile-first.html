@@ -1,0 +1,189 @@
+CONCEITO MOBILE-FIRST PARA CSS
+Quando você usa o conceito mobile-first para fazer seu estilo CSS significa dizer que os estilos são aplicados primeiro para dispositivos moveis, só então são aplicados substituições, estilo avançados e consultas de media queries para telas maiores. No mobile-first styling você utiliza a propriedade min-width nas consultas de media queries. “Nos exemplos vou utilizar CSS puro, não vou utilizar pré-processadores”
+
+Exemplo rápido:
+
+/* este estilo aplica-se a partir de 0px até 900px */
+body {
+      background: red;
+} 
+
+/* este estilo aplica-se a partir de 900px em diante */
+@media ( min-width: 900px ) {
+  body {
+    background: green;
+  }
+}
+No exemplo acima o background fica vermelho para dispositivos mobile de 0px até 900px(899px) de 900px em diante o background fica verde.
+
+
+Na abordagem desktop-first os estilos são aplicados primeiro para desktop onde você utiliza a propriedade max-width nas consultas de medias queries.
+
+Exemplo rápido:
+
+/* este estilo aplica-se a partir de 900px em diante */
+body {
+      background: red;
+} 
+/* este estilo aplica-se a partir de 0px até 900px */
+@media ( max-width: 900px ) {
+   body {
+    background: green;
+   }
+}
+ 
+
+Você pode ter um projeto que usa a abordagem mobile-first, e mesmo assim fazer um código Desktop-first, correto? Não, ou pelo menos não deveria. Desenvolver estilos para telas maiores geralmente são mais complicados do que para telas menores, quando você faz o estilo para mobile-first primeiro você simplifica o código e fica em conformidade com o projeto já que o mesmo foi planejado dentro da abordagem mobile-first.
+
+Vamos ao próximo exemplo, imagine que você tem um layout que tenha três div’s com uma class com nome box, no mobile o estilo requer 100% de largura e no desktop requer 33.33%.
+
+
+Neste caso como estou utilizando a tag div que tem 100% de largura como padrão, eu não preciso seta um uma propriedade de largura. Veja o exemplo no código com o conceito mobile-first:
+
+.box{
+   /*Não precisamos inserir nenhum código aqui */
+}
+.box:nth-child (odd) {
+    background:#222;  /* Adicionei um background para um melhor entendimento */
+}
+@media ( min-width: 800px ) {
+    float: left;
+    width: 33.33%;
+}
+
+O código fica muito elegante e com linhas de CSS a menos.   Se utilizamos o conceito Desktop-first teríamos que modificarmos algumas propriedades para alguns viewports. Veja um exemplo de código Desktop-first:
+
+.box {
+    /*primeiro configuro as propriedades para telas maiores */
+    float: left;
+    width: 33.33%;
+}
+@media ( max-width: 800px ) {
+
+/*Aqui configuro o estilo para telas menores, veja que preciso 
+reescrever novamente para que o estilo fique de acordo com layout */
+
+    float: none;
+    width: 100%;
+}
+
+
+Com o exemplo do código CSS mobile-first nós poupamos algumas linhas de código e melhoramos a performance da CSS. Agora imagine quanto tempo você irá poupar em um projeto de médio e grande porte.
+
+Creio que você já percebeu que apenas utilizando propriedade min-width você já resolve várias questões no desenvolvimento mobile-first, mas nem sempre vai ser o suficiente. Em alguns casos você terá que usar a combinação min-width e max-width para resolver algumas cominações que a propriedade min-width não poderá resolver. Vamos analisar o exemplo onde podemos utiliza o min-width e max-width juntos para resolver problemas em layout responsivos.
+
+Vamos considerar um exemplo de um site que seja divido da seguinte forma: 3 box em uma fileira para dispositivo mobile e 4 box em uma fileira para desktop.mobile-first-para-desktop
+
+
+O código para este exemplo é bem simples:
+
+.boxs {
+    float: left;
+    width: 28.33%;
+}
+@media ( min-width: 800px ) {
+    width: 25%; /*bem simples*/
+}
+Mas ele fica um pouco complicado se a espaços entre os boxs.
+
+Digamos que os espaços ocupem 5% de largura;
+
+.boxs {
+    float: left;
+    width: 33.33%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+Neste caso teremos que dar uma margin-rigth:0; a cada 3 boxs (itens) para que as boxs não sejam empurradas para baixo no caso do layout mobile.
+
+.boxs :nth-child(3n) { 
+   
+   margin-right: 0%;
+
+}
+Mas também esse código deve trabalhar uma fileira com 4 boxs para ir de acordo com o layout proposto para o desktop.
+
+.boxs {
+    float: left;
+    width: 28.33%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.boxs :nth-child(3n) {
+
+    margin-right: 0%;
+
+}
+@media ( min-width: 800px ) {
+
+    width: 21.25% /* ( 100% - 15% ) / 4  os 15% são da margin-rigth */
+    
+ .boxs:nth-child(4n) {
+   
+    margin-rigth: 0%;
+
+  }
+
+}
+
+
+Este código não funciona bem porque nós especificamos que a cada 3 boxs (itens) deve ter um margin-right: 0. Essa propriedade fica em cascata com isso em uma largura maior o padrão do layout não fica como desejado e rompe-se. Veja como ficaria se você utilizar o código acima:
+
+css mobile-first
+
+Nós poderíamos corrigir usando a consulta de media min-width dando a cada 3 boxs uma margin-right: 5%;
+
+.boxs {
+    float: left;
+    width: 28.33%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+@media ( min-width: 800px ) {
+
+ width: 21.25% /* ( 100% - 15% ) / 4  os 15% são da margin-rigth */
+
+.boxs :nth-child(3n) {
+
+    margin-right: 5%;
+}
+    
+.boxs:nth-child(4n) {
+         
+    margin-rigth: 0%;
+    }
+}
+
+
+Isto resolve, mas não fica bem porque não estamos usando o viewport apropriado e sim repetindo para todos os viewports. Como nós somos bons desenvolvedores sempre buscamos escrever as CSS mais apropriadas possíveis e sem repetições. Usaremos a cominação max-width e min-width.
+
+.boxs {
+    float: left;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+@media ( max-width: 800px ) {
+   .boxs {
+      width: 28.33%;       
+   }
+.boxs:nth-child(3n){
+    margin-right: 0%;
+   }
+
+}
+@media ( min-width: 800px ) {
+
+.boxs{
+    width: 21.25%; /* ( 100% - 15% )  / 4 */
+  }
+.boxs:nth-child(4n) {
+    margin-right: 0%;
+  }
+    
+}
+Este código funcionará bem porque o max-width: 800px limita os seletores abaixo de 800px com isso o estilo não afetará outros viewports.
+
+CONCLUSÃO.
+Quando você utiliza min-width para consulta de media queries para site responsivo, você consegue reduzir a complexidade do seu código, mas min-width não é a solução para todos os problemas como mostrei nós exemplos, você pode utilizar a combinação max-width e min-width para fazer um código CSS muito limpo.

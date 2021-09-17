@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    /* Pode usar root: {} ou html {}*/
+html {
+    font-size: 10px; /* padrao da fonte do html pelos navegadores é 16px */
+}
+body {
+    font-size: 20px;
+}
+h1 {
+   /* font-size: 3rem; /* r =  root = 3 x o valor de root ou html = 3x 10 */
+    font-size: 3em; /*  multiplica o valor pelo pai / body é o pai de h1*/
+}
+.box {
+    font-size: 2rem;
+  /*  font-size: 2em; */
+}
+.box-interno {
+    width: 10rem;
+ /*   width: 10rem; outro exemplo do em filho box-interno, box filho do body ou seja 10em x 2em x 20px = 400 */
+    height: 10rem;
+    background: #999;
+}
+</style>
+
+<body>
+
+    <h1>Este é o título da página</h1>
+
+    <div class="box">
+        <div class="box-interno">
+            Esta é uma frase
+        </div>
+    </div>
+</body>
+</html>

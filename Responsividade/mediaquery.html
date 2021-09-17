@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /* min-width:100px, o elemento vai ter no mínimo 100px de largura,
+    mas pode ter mais dependo do conteúdo que estiver dentro. max-width:100px, 
+    se não houver conteúdo dentro do elemento ele fica com 0px de largura, 
+    mas se vc colocar algo dentro ele vai crescer até no máximo 100px.... 
+    Sobre a responsividade de cada um e como usa-los no @media veja as duplicadas.
+     Tb recomendo que leia sobre Mobile First https://www.todoespacoonline.com/w/2015/03/como-escrever-seu-css-para-projetos-mobile-first/
+
+    */
+    body {
+        background: greenyellow;
+    }
+    @media (min-width: 1000px) {
+        body {
+            background: blue;
+        }
+    }
+    @media (min-min-width: 700px) and (max-width: 999px){
+
+    }
+    @media (max-width: 600px){
+        body {
+            background: red;
+        }
+        h1 {
+            font-size: 15px;
+        }
+    }
+</style>
+<body>
+    <h1>Seja Bem vindo (a) ao meu site</h1>
+</body>
+</html>
