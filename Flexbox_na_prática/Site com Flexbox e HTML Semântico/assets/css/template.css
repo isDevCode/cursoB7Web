@@ -2,7 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial;
+   
 }
+
 
 header {
     display: flex;
@@ -223,4 +225,103 @@ flex: 1;
       line-height: 20px;
       margin-bottom: 30px;
 
+    }
+    footer {
+        background: #1e1e1e;
+        display: flex;
+        justify-content: center;
+    }
+    .footer_menu {
+        display: flex;
+    }
+    .footer_menu a{
+        display: block;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        
+    }
+    .fm_1, .fm_2, .fm_3 {
+        flex: 1;
+        color: #fff;
+       
+    }
+    .fm_1 {
+        background: #39aae1;
+    }
+    .fm_2 {
+        background: #0079c7;
+    }
+    .fm_3 {
+        background: #2b4c99;
+    }
+    .footer_area {
+        display: flex;
+        color: #fff;
+    }
+    .footer_areaitem {
+        flex: 1;
+        color: #fff;
+    }
+    .flexColumn {
+        flex-direction: column;
+    }
+    footer .widget_title_text {
+        color: #fff;
+    }
+    .footer_copy {
+        border-top: 1px solid #2c2c2c;
+        height: 40px;
+        line-height: 40px;
+        color: #5c5c5c;
+        font-size: .8rem;
+        margin-top: 30px;
+    }
+    .widget_body {
+       color: #5c5c5c;
+       padding: 10px;
+       
+    }
+    .widget_body a {
+    text-decoration: none;
+    color: #fff;
+    }
+    .widget_body p {
+    margin-bottom: 0;
+    line-height: 1.5rem;
+    }
+    .color {
+        color: #fff;
+    }
+
+      .ano{
+     color: #39aae1;
+     margin-top: 0;
+    }
+    .street {
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        padding: 30px;
+        
+    }
+    .street p {
+        margin-top: 50px;
+    }
+    .address p {
+       width: 150px;
+       margin: 0;
+       color: #5c5c5c;
+    }
+    .contact p {
+       margin: 0;
+      color: #5c5c5c;
+
+    }
+    .contact a p {
+      text-decoration: none;
+      color: #fff;
+    }
+    .redes-sociais ul {
+        display: flex;
     }
