@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+.container {
+    display: flex;
+    height: 500px;
+  /*  flex-direction: row;
+ /* flex-wrap: wrap;  se não couber vai para linh ade baixo */
+ /* flex-wrap: nowrap; encolhe todos na mesma linha e não fica do tamanho que você especificou, justamente é efetuado um cálculo para ficar na mesma linha */
+ /* flex-flow: row wrap;  essa propriedade flex-flow utiliza ambos os recursos é um atalho, ou seja ela é flex-direction e flex-wrap juntas*/ 
+    justify-content: center /* alinha o conteúdo na linha,  alinha o conteúdo de dentro da caixa ela é adicionada dentro do container, ou seja ela alinha tudo o que está dentro con container e não com um conteúdo específico*/;
+  /*  align-items: center; // alinha os itens na coluna, alinha na direção contrária do juntify-content */
+    align-items: flex-start;
+    background: #DDDDDD;
+   /* align-content: center;  alinha todo o conteúdo*/
+}
+.container div {
+width: 100px;
+height: 100px;
+background: #FF0000;
+margin: 10px;
+padding: 10px;
+font-size: 18px;
+}
+.container .div10 {
+   /* align-self: flex-end; /*  propriedade align-self para alinhar esse item específico, ou seja alinha ele mesmo*/
+    background: chartreuse;
+    order: -1;
+ }
+ .container .div2 {
+   /* align-self: flex-end; /*  propriedade align-self para alinhar esse item específico, ou seja alinha ele mesmo*/
+    background: chartreuse;
+    order: 1;
+ }
+ .container .div9 {
+   /* align-self: flex-end; /*  propriedade align-self para alinhar esse item específico, ou seja alinha ele mesmo*/
+    background: chartreuse;
+    order: 2;
+ }
+</style>
+<body>
+ <div class="container">
+     <div>1</div>
+     <div class="div2">2</div>
+     <div>3</div>
+     <div>4</div>
+     <div>5</div>
+     <div>6</div>
+     <div>7</div>
+     <div>8</div>
+     <div class="div9">9</div>
+     <div class="div10">10</div>
+     <div>11</div>
+     <div>12</div>
+     <div>13</div>
+     <div>14</div>
+     <div>15</div>
+     
+ </div>   
+</body>
+</html>
