@@ -226,6 +226,43 @@ flex: 1;
       margin-bottom: 30px;
 
     }
+  
+
+     aside .container-aside{
+      
+         width: 300px;
+        height: 100px;
+        
+     }
+    aside .Departments  {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 350px;
+             
+    }
+    aside .Departments div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 5px;
+        
+        margin-top: 30px;
+        width:  150px;
+        height: 150px;
+        background: #79a4df;
+        
+        
+    }
+
+   
+          
+    aside  .Appointment p {
+ 
+   border-bottom: 1px solid #5c5c5c;
+   padding: 5px;
+    }
+
     footer {
         background: #1e1e1e;
         display: flex;
