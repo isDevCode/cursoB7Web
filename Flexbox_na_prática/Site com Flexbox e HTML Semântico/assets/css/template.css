@@ -60,7 +60,8 @@ align-items: center;
   #banner {
       display: flex;
       justify-content: center;
-      background: url(../img/woman.jpg);
+     /* background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, .2)100%), url(../img/woman.jpg); */
+     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, .2)300%), url(../img/woman.jpg);
       background-size: cover;
       background-position: center;
       height: 42rem;
