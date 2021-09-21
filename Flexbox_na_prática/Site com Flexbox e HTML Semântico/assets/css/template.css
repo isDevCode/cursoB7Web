@@ -4,19 +4,16 @@ body {
     font-family: Arial;
    
 }
-
-
 header {
     display: flex;
     justify-content: center;
-    height: 120px;
+    height: 7.5rem;
  }
 .container {
     display: flex;
     justify-content: space-between;
     width: 990px;
-    
- }
+    }
 .logo {
 display: flex;
 align-items: center;
@@ -32,12 +29,13 @@ align-items: center;
 .logo img {
  display: flex;
  background: rgb(223, 190, 58);
- width: 150px;
- height:120px;
+ width: 9rem;
+ height:7rem;
  }
  .menu {
      display: flex;
      align-items: center;
+     margin-right: 40px;
  }
  nav ul,
  nav li {
@@ -45,8 +43,7 @@ align-items: center;
      list-style: none;
      margin: 0;
      padding: 0;
-     
- }
+   }
  nav a {
      display: block;
      padding: 15px;
@@ -66,7 +63,7 @@ align-items: center;
       background: url(../img/woman.jpg);
       background-size: cover;
       background-position: center;
-      height: 670px;
+      height: 42rem;
   }
   .column {
       flex-direction: column;
@@ -76,15 +73,15 @@ align-items: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      
-  }
+     
+ }
   .banner_headline h1 {
       color: #fff;
       font-size: 3rem;
       text-shadow: 2px 2px 3px #000000;
       padding: 0;
       margin: 0;
-      max-width: 350px;
+      max-width: 22rem;
   }
   .banner_headline h2 {
     color: #fff;
@@ -92,7 +89,7 @@ align-items: center;
     text-shadow: 2px 2px 3px #000000;
     padding: 0;
     margin: 0;
-    max-width: 350px;
+    max-width: 22rem;
     margin-top: 30px;
 }
   .banner_options {
@@ -160,6 +157,7 @@ flex: 2;
   #geral aside {
 flex: 1;
   }
+ 
   .widget_title {
      margin: 30px 0 0 20px;
   }
@@ -178,7 +176,6 @@ flex: 1;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-
     }
     article {
         flex: 1;
@@ -226,21 +223,17 @@ flex: 1;
       margin-bottom: 30px;
 
     }
-  
-
-     aside .container-aside{
+       aside .container-aside{
       
          width: 300px;
-        height: 100px;
-        
-     }
+       height: 100px;
+      }
     aside .Departments  {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 350px;
-             
-    }
+      }
     aside .Departments div {
         display: flex;
         flex-direction: row;
@@ -251,13 +244,8 @@ flex: 1;
         width:  150px;
         height: 150px;
         background: #79a4df;
-        
-        
-    }
-
-   
-          
-    aside  .Appointment p {
+     }
+   aside  .Appointment p {
  
    border-bottom: 1px solid #5c5c5c;
    padding: 5px;
@@ -361,4 +349,102 @@ flex: 1;
     }
     .redes-sociais ul {
         display: flex;
+    }
+    .menuMobile {
+    display: none;
+  /* visibility: hidden; */
+    width: 40px;
+    height: 40px;
+    padding: 40px 0 40px 0;
+    margin-right: 20px;
+    
+    }
+    .mm_line{
+    height: 3px;
+    background: #39aae1;
+    }
+
+    .redes-sociais img{
+     width: 30px;
+     padding: 0 10px 0 0;
+     color:#5c5c5c;
+    }
+    .redes-sociais li{
+        list-style: none;
+    }
+    /* ------------------- mediaquery-------------------------- */
+
+
+    @media (max-width: 600px) {
+    header .container {
+        flex-direction: row;
+    }
+    nav ul {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: #fff;
+    }
+    header {
+        height: auto;
+    }
+    
+    .menuMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      /*  visibility: visible;*/
+        
+    }
+    #banner {
+        margin-bottom: 150px;
+    }
+    .banner_headline  {
+        padding: 20px;
+        }
+    .banner_headline h1 {
+        font-size: 50px;
+    }
+    .banner_headline h2 {
+        font-size: 17px;
+    }
+    .banner_options {
+        height: auto;
+        flex-direction: column;
+    }
+    .container {
+        flex-direction: column;
+        width: 990px;
+    }
+    #geral section, 
+    #geral aside {
+        padding: 20px;
+       
+    }
+    aside .container-aside {
+        width: 300px;
+        height: 950px; 
+    }
+    .footer_menu {
+        flex-direction: column;
+    }
+    .banner_desc {
+        font-size: .8rem;
+        margin: 20px 0 20px 0;
+        width: 300px;
+    }
+.footer_area {
+    flex-direction: column;
+    padding: 20px;
+}
+.footer_copy {
+    padding: 20px;
+}
+.redes-sociais img{
+   
+    padding: 0 20px 0 0;
+   
+   }
     }
