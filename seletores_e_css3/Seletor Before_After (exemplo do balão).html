@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   .balao1 {
+       background: #0000ff;
+       display: inline-block;
+       color: #fff;
+       padding: 20px;
+       border-radius: 20px;
+   }
+   .balao2 {
+       background: #0000ff;
+       display: inline-block;
+       color: #fff;
+       padding: 20px;
+       border-radius: 20px;
+   }
+   .balao1::after {
+       content: '';
+       display: block;
+       position: absolute;
+       margin-top: 20px;
+       border: 20px solid;
+       border-color: #0000ff transparent transparent transparent;
+   }
+   .balao2::after {
+       content: '';
+       display: inline-block;
+       position: absolute;
+       top: 20px;
+       margin-left: 18px;
+       border: 20px solid;
+       border-color:  transparent transparent transparent #0000ff;
+   }
+</style>
+<body>
+    <div class="balao1">Olá, Tudo bem? <br> Como Vai?</div>
+    <div class="balao2">Estou bem! <br> E vocÊ como Vai?</div>
+</body>
+</html>
